@@ -1,8 +1,6 @@
-FROM alpine:3 
+FROM mcr.microsoft.com/azure-cli:2.37.0
 
 RUN ["/bin/sh", "-c", "apk add --update --no-cache bash ca-certificates curl git jq openssh"]
-
-RUN ["/bin/bash", "-c", "curl -L https://aka.ms/InstallAzureCli | bash"]
 
 COPY ["src", "/src/"]
 
